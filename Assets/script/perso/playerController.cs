@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
+    public List<PokemonData> playerPokemons;
     public float Life = 100f;
     public float sensitivity = 3;
     private Rigidbody rb;

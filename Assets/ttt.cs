@@ -10,15 +10,12 @@ public class ttt : MonoBehaviour
     string _Playertype = "fire";
     public PokemonType _pokemontype = PokemonType.fire;
 
-    // Dictionnaire de dictionnaires pour stocker les coefficients de dommages
     private Dictionary<PokemonType, Dictionary<PokemonType, float>> damageCoefficients = new Dictionary<PokemonType, Dictionary<PokemonType, float>>()
     {
         { PokemonType.water, new Dictionary<PokemonType, float> { { PokemonType.plant, 2f }, { PokemonType.fire, 0.5f } } },
         { PokemonType.fire, new Dictionary<PokemonType, float> { { PokemonType.water, 2f }, { PokemonType.plant, 0.5f } } },
         { PokemonType.plant, new Dictionary<PokemonType, float> { { PokemonType.fire, 2f }, { PokemonType.water, 0.5f } } }
     };
-
-    // Fonction pour appliquer des dégâts
     void TakeDamage(float DamageAmount, PokemonType attacktype)
     {
         if (damageCoefficients.ContainsKey(attacktype) && damageCoefficients[attacktype].ContainsKey(_pokemontype))
@@ -27,7 +24,6 @@ public class ttt : MonoBehaviour
             DamageAmount *= damageCoefficient;
         }
 
-        // Appliquez les dégâts au joueur
         _Playerhealth -= DamageAmount;
         Debug.Log("Player took " + DamageAmount + " damage. New health: " + _Playerhealth);
     }
@@ -36,8 +32,6 @@ public class ttt : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    // Détection de collision lorsque le cube entre dans un trigger
     void OnTriggerEnter(Collider other)
     {
         ttt otherCubeScript = other.GetComponent<ttt>();

@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class TallGrass : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<PokemonData> wildPokemons;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            StartBattle(other.GetComponent<PlayerController>());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void StartBattle(PlayerController player)
     {
-        
+        PokemonData wildPokemon = wildPokemons[Random.Range(0, wildPokemons.Count)];
+        PokemonData playerPokemon = player.playerPokemons[0];
+
+        BattleManager.Instance.StartBattle(playerPokemon, wildPokemon);
     }
 }

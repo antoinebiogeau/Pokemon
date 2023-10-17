@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LifeManager : MonoBehaviour
 {
     public Slider healthBar;
-    public Vector3 offset = new Vector3(0, 2, 0); // Ajustez selon la position désirée
+    public Vector3 offset = new Vector3(0, 2, 0);
 
     private Camera mainCamera;
 

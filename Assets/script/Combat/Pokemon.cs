@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class Pokemon : MonoBehaviour
 {
-    public PokemonData data; // Référence à PokemonData
+    public PokemonData data; 
     public float currentHealth;
     public Slider healthBar;
 
     private void Start()
     {
-        currentHealth = data.maxHP; // Initialisation à partir de PokemonData
+        currentHealth = data.maxHP; 
         UpdateHealthBar();
     }
 
@@ -42,6 +42,4 @@ public class Pokemon : MonoBehaviour
             healthBar.fillRect.GetComponent<Image>().color = Color.green;
         }
     }
-
-    // Si tu veux accéder aux attaques ou autres propriétés, utilise data.attacks ou autres propriétés de PokemonData
 }

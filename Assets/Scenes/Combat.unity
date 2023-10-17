@@ -1040,21 +1040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ab8e0bce433ec4ea70c674a1263f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  pokemonType: 2
-  attacks:
-  - attackName: test
-    attackType: 2
-    damage: 10
-  - attackName: test2
-    attackType: 2
-    damage: 20
-  - attackName: test3
-    attackType: 2
-    damage: 30
-  - attackName: 'test 4 '
-    attackType: 2
-    damage: 0
+  data: {fileID: 11400000, guid: 763e036a779d2b044afef399738d4e21, type: 2}
+  currentHealth: 0
   healthBar: {fileID: 696642125}
 --- !u!1 &750942414
 GameObject:
@@ -1438,21 +1425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ab8e0bce433ec4ea70c674a1263f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  pokemonType: 1
-  attacks:
-  - attackName: tt
-    attackType: 1
-    damage: 10
-  - attackName: tt
-    attackType: 1
-    damage: 20
-  - attackName: tt
-    attackType: 1
-    damage: 30
-  - attackName: tt
-    attackType: 1
-    damage: 40
+  data: {fileID: 11400000, guid: 02bac6e41806e744da10395d47297fe4, type: 2}
+  currentHealth: 0
   healthBar: {fileID: 750942416}
 --- !u!1 &832575517
 GameObject:
@@ -2078,8 +2052,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e583769d01be2148bf6ac3e65588cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPokemon: {fileID: 790852043}
-  enemyPokemon: {fileID: 743522491}
+  playerPokemonPrefab: {fileID: 0}
+  enemyPokemonPrefab: {fileID: 0}
   bagUI: {fileID: 0}
   mainSceneName: main
 --- !u!4 &1184927478
@@ -2753,13 +2727,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1184927477}
-        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: PlayerAttack
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
