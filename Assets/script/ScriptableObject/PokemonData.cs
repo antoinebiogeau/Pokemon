@@ -16,5 +16,6 @@ public class PokemonData : ScriptableObject
     public PokemonType pokemonType;
     public Attack[] attacks = new Attack[4];
 
-    
+    public PokemonData evolution;
+    public List<PokemonData> variants;
 }
