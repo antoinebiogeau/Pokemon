@@ -24,8 +24,6 @@ public class Pokemon : MonoBehaviour
     {
         health -= damage;
         healthBar.value = health;
-
-        // Mise à jour de la couleur de la barre de santé
         if (health <= 20)
         {
             healthBar.fillRect.GetComponent<Image>().color = Color.red;

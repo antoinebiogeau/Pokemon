@@ -67,10 +67,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(tempTarget.x * 10, rb.velocity.y, tempTarget.z * 10);
         }
 
-        if ((Input.GetKeyDown("space")))
-        {
-            rb.velocity += new Vector3(0f, jumpVelocity, 0f);
-        }
     }
     public float gethealth()
     {
