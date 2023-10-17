@@ -870,7 +870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wildPokemons:
-  - {fileID: 11400000, guid: 02bac6e41806e744da10395d47297fe4, type: 2}
   - {fileID: 11400000, guid: 763e036a779d2b044afef399738d4e21, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

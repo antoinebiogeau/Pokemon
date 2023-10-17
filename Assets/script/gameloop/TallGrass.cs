@@ -18,6 +18,7 @@ public class TallGrass : MonoBehaviour
     {
         PokemonData wildPokemon = wildPokemons[Random.Range(0, wildPokemons.Count)];
         PokemonData playerPokemon = player.playerPokemons[0];
+        
 
         BattleManager.Instance.StartBattle(playerPokemon, wildPokemon);
     }

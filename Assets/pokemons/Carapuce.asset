@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Carapuce
   m_EditorClassIdentifier: 
   pokemonName: Carapuce
-  pokemonMesh: {fileID: 0}
+  pokemonPrefab: {fileID: 919132149155446097, guid: 703a64d6df54e16479985bbc1729828c,
+    type: 3}
   maxHP: 100
   attack: 10
   defense: 10

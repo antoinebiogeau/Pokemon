@@ -12,6 +12,7 @@ public class BattleManager : MonoBehaviour
 
     private void Awake()
     {
+        // Singleton pattern pour s'assurer qu'il n'y a qu'une seule instance de BattleManager
         if (Instance == null)
         {
             Instance = this;
@@ -27,8 +28,15 @@ public class BattleManager : MonoBehaviour
     {
         playerPokemonData = playerData;
         enemyPokemonData = wildData;
+        playerPokemonData = playerData;
+        enemyPokemonData = wildData;
+
+        Debug.Log("Setting playerPokemonData to: " + (playerPokemonData == null ? "NULL" : playerPokemonData.name));
+        // Logs pour vérifier que les données sont correctement définies
+        Debug.Log("BattleManager: Player Pokemon set to: " + playerPokemonData.name);
+        Debug.Log("BattleManager: Enemy Pokemon set to: " + enemyPokemonData.name);
 
         // Change la scène vers la scène de combat
-        SceneManager.LoadScene("Combat"); // Remplace "BattleScene" par le nom de ta scène de combat
+        SceneManager.LoadScene("Combat");
     }
 }

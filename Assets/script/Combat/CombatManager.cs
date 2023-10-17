@@ -5,35 +5,52 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
-    public Pokemon playerPokemonPrefab;
-    public Pokemon enemyPokemonPrefab;
-
     private Pokemon playerPokemon;
     private Pokemon enemyPokemon;
 
     public GameObject bagUI;
-    public string mainSceneName = "MainScene";
+    public string mainSceneName = "main";
+
     public void Start()
     {
         if (BattleManager.Instance != null)
         {
-            playerPokemon = Instantiate(playerPokemonPrefab, new Vector3(0, 0, -3), Quaternion.identity);
-            playerPokemon.data = BattleManager.Instance.playerPokemonData;
-            enemyPokemon = Instantiate(enemyPokemonPrefab, new Vector3(0, 0, 3), Quaternion.Euler(0, 180, 0)); 
-            enemyPokemon.data = BattleManager.Instance.enemyPokemonData;
+            if (BattleManager.Instance.playerPokemonData == null)
+            {
+                Debug.LogError("playerPokemonData is null in BattleManager.");
+            return;
+            }
+            // Récupération des prefabs à partir des ScriptableObjects
+            GameObject playerPrefab = BattleManager.Instance.playerPokemonData.pokemonPrefab;
+            GameObject enemyPrefab = BattleManager.Instance.enemyPokemonData.pokemonPrefab;
+
+            if (playerPrefab != null)
+            {
+                playerPokemon = Instantiate(playerPrefab, new Vector3(0, 0, -3), Quaternion.identity).GetComponent<Pokemon>();
+                playerPokemon.data = BattleManager.Instance.playerPokemonData;
+                Debug.Log("Player Pokemon instantiated at " + playerPokemon.transform.position);
+            }
+            else
+            {
+                Debug.LogError("Player Pokemon prefab is null.");
+            }
+
+            if (enemyPrefab != null)
+            {
+                enemyPokemon = Instantiate(enemyPrefab, new Vector3(0, 0, 3), Quaternion.Euler(0, 180, 0)).GetComponent<Pokemon>();
+                enemyPokemon.data = BattleManager.Instance.enemyPokemonData;
+                Debug.Log("Enemy Pokemon instantiated at " + enemyPokemon.transform.position);
+            }
+            else
+            {
+                Debug.LogError("Enemy Pokemon prefab is null.");
+            }
+
         }
-    }
-    public void StartBattle(PokemonData playerData, PokemonData wildData)
-    {
-
-        playerPokemon = Instantiate(playerPokemonPrefab);
-        enemyPokemon = Instantiate(enemyPokemonPrefab);
-
-
-        playerPokemon.data = playerData;
-        enemyPokemon.data = wildData;
-
-
+        else
+        {
+            Debug.LogError("CombatManager: BattleManager.Instance is null.");
+        }
     }
 
     public void PlayerAttack(int attackIndex)
@@ -41,7 +58,6 @@ public class CombatManager : MonoBehaviour
         AttackData chosenAttack = playerPokemon.data.attacks[attackIndex];
         float damage = chosenAttack.damage;
         enemyPokemon.TakeDamage(damage);
-
 
         Debug.Log("Le joueur a utilisé " + chosenAttack.attackName + " et a infligé " + damage + " dégâts à l'ennemi.");
         Debug.Log("Fin de tour");
@@ -55,21 +71,13 @@ public class CombatManager : MonoBehaviour
         float damage = chosenAttack.damage;
         playerPokemon.TakeDamage(damage);
 
-
         Debug.Log("L'ennemi a utilisé " + chosenAttack.attackName + " et a infligé " + damage + " dégâts au joueur.");
         Debug.Log("Fin du tour de l'ennemi.");
     }
 
     public void ToggleBagUI()
     {
-        if (bagUI.activeSelf)
-        {
-            bagUI.SetActive(false);
-        }
-        else
-        {
-            bagUI.SetActive(true);
-        }
+        bagUI.SetActive(!bagUI.activeSelf);
     }
 
     public void FleeBattle()
