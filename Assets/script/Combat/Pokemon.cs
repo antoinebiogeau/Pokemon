@@ -1,34 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum PokemonType { Feu, Eau, Plante }
-
-[System.Serializable]
-public class Attack
-{
-    public string attackName;
-    public PokemonType attackType;
-    public float damage;
-}
 public class Pokemon : MonoBehaviour
 {
-    
-    public float health = 100;
-    public PokemonType pokemonType;
-    public Attack[] attacks = new Attack[4];
+    public PokemonData data; // Référence à PokemonData
+    public float currentHealth;
     public Slider healthBar;
+
+    private void Start()
+    {
+        currentHealth = data.maxHP; // Initialisation à partir de PokemonData
+        UpdateHealthBar();
+    }
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        healthBar.value = health;
-        if (health <= 20)
+        currentHealth -= damage;
+        UpdateHealthBar();
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log(data.pokemonName + " est KO!");
+            Destroy(gameObject);
+        }
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.value = currentHealth / data.maxHP;
+
+        if (currentHealth <= 20)
         {
             healthBar.fillRect.GetComponent<Image>().color = Color.red;
         }
-        else if (health <= 50)
+        else if (currentHealth <= 50)
         {
             healthBar.fillRect.GetComponent<Image>().color = Color.yellow;
         }
@@ -36,10 +41,7 @@ public class Pokemon : MonoBehaviour
         {
             healthBar.fillRect.GetComponent<Image>().color = Color.green;
         }
-        if (health <= 0)
-        {
-            Debug.Log(gameObject.name + " est KO!");
-            Destroy(gameObject);
-        }
     }
+
+    // Si tu veux accéder aux attaques ou autres propriétés, utilise data.attacks ou autres propriétés de PokemonData
 }

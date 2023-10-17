@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fadad466970a00640a6348072743a0d1, type: 3}
-  m_Name: "Salam\xE8che"
+  m_Name: Carapuce
   m_EditorClassIdentifier: 
-  pokemonName: "Salam\xE8che"
+  pokemonName: Carapuce
   pokemonMesh: {fileID: 0}
   maxHP: 100
   attack: 10
@@ -20,8 +20,8 @@ MonoBehaviour:
   specialAttack: 10
   specialDefense: 10
   speed: 10
-  pokemonType: 0
+  pokemonType: 1
   attacks:
-  - {fileID: 11400000, guid: cd83680642c5ded4dbe47b05e9f3fa98, type: 2}
+  - {fileID: 11400000, guid: f26d9028339312d43a33e7b5121ba782, type: 2}
   evolution: {fileID: 0}
   variants: []
