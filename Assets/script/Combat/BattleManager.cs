@@ -29,6 +29,6 @@ public class BattleManager : MonoBehaviour
         enemyPokemonData = wildData;
 
         // Change la scène vers la scène de combat
-        SceneManager.LoadScene("BattleScene"); // Remplace "BattleScene" par le nom de ta scène de combat
+        SceneManager.LoadScene("Combat"); // Remplace "BattleScene" par le nom de ta scène de combat
     }
 }

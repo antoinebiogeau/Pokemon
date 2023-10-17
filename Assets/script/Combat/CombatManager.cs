@@ -17,7 +17,9 @@ public class CombatManager : MonoBehaviour
     {
         if (BattleManager.Instance != null)
         {
+            playerPokemon = Instantiate(playerPokemonPrefab, new Vector3(0, 0, -3), Quaternion.identity);
             playerPokemon.data = BattleManager.Instance.playerPokemonData;
+            enemyPokemon = Instantiate(enemyPokemonPrefab, new Vector3(0, 0, 3), Quaternion.Euler(0, 180, 0)); 
             enemyPokemon.data = BattleManager.Instance.enemyPokemonData;
         }
     }

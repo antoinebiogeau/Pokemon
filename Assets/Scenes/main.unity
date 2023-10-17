@@ -548,6 +548,52 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1245218167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1245218169}
+  - component: {fileID: 1245218168}
+  m_Layer: 0
+  m_Name: BattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1245218168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245218167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 458ec0bb6697f0246bde1c829a8db53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPokemonData: {fileID: 0}
+  enemyPokemonData: {fileID: 0}
+--- !u!4 &1245218169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245218167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.0796623, y: 3.273203, z: -0.26924253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1591765508
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae1c12272160dc428d756d5d84fbad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPokemons:
+  - {fileID: 11400000, guid: 763e036a779d2b044afef399738d4e21, type: 2}
   Life: 100
   sensitivity: 3
   rotSpeed: 4
@@ -818,9 +866,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1798131765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b175901098004f4097b45a6c061bb65, type: 3}
+  m_Script: {fileID: 11500000, guid: 9629130d5aff7c742888d94f41a99365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wildPokemons:
+  - {fileID: 11400000, guid: 02bac6e41806e744da10395d47297fe4, type: 2}
+  - {fileID: 11400000, guid: 763e036a779d2b044afef399738d4e21, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -830,3 +881,4 @@ SceneRoots:
   - {fileID: 777097628}
   - {fileID: 1591765513}
   - {fileID: 1798131769}
+  - {fileID: 1245218169}
