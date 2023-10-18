@@ -28,9 +28,6 @@ public class BattleManager : MonoBehaviour
     {
         playerPokemonData = playerData;
         enemyPokemonData = wildData;
-        playerPokemonData = playerData;
-        enemyPokemonData = wildData;
-
         Debug.Log("Setting playerPokemonData to: " + (playerPokemonData == null ? "NULL" : playerPokemonData.name));
         // Logs pour vérifier que les données sont correctement définies
         Debug.Log("BattleManager: Player Pokemon set to: " + playerPokemonData.name);

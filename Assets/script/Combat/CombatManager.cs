@@ -5,9 +5,14 @@ using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
-    private Pokemon playerPokemon;
-    private Pokemon enemyPokemon;
 
+    public Pokemon playerPokemon;
+    public Pokemon enemyPokemon;
+    public Slider healthBarEnemy;
+    public Slider healthBarPlayer;
+    public LifeManager PlayerLifeSet;
+    public LifeManager EnemyLifeSet;
+    public Camera mainCamera;
     public GameObject bagUI;
     public string mainSceneName = "main";
 
@@ -23,11 +28,32 @@ public class CombatManager : MonoBehaviour
             // Récupération des prefabs à partir des ScriptableObjects
             GameObject playerPrefab = BattleManager.Instance.playerPokemonData.pokemonPrefab;
             GameObject enemyPrefab = BattleManager.Instance.enemyPokemonData.pokemonPrefab;
+            playerPokemon = BattleManager.Instance.playerPokemonData.pokemonPrefab.GetComponent<Pokemon>();
+            enemyPokemon = BattleManager.Instance.enemyPokemonData.pokemonPrefab.GetComponent<Pokemon>();
+            EnemyLifeSet = BattleManager.Instance.enemyPokemonData.pokemonPrefab.GetComponent<LifeManager>();
+            EnemyLifeSet.healthBar = healthBarEnemy;
+            EnemyLifeSet.mainCamera = mainCamera;
+            PlayerLifeSet = BattleManager.Instance.playerPokemonData.pokemonPrefab.GetComponent<LifeManager>();
+            PlayerLifeSet.healthBar =  healthBarPlayer;
+            PlayerLifeSet.mainCamera = mainCamera;
 
+
+            if (enemyPrefab != null)
+            {
+                enemyPokemon = Instantiate(enemyPrefab, new Vector3(0, 0, 3), Quaternion.Euler(0, 180, 0)).GetComponent<Pokemon>();
+                enemyPokemon.data = BattleManager.Instance.enemyPokemonData;
+                enemyPokemon.healthBar = healthBarEnemy;
+                Debug.Log("Enemy Pokemon instantiated at " + enemyPokemon.transform.position);
+            }
+            else
+            {
+                Debug.LogError("Enemy Pokemon prefab is null.");
+            }
             if (playerPrefab != null)
             {
                 playerPokemon = Instantiate(playerPrefab, new Vector3(0, 0, -3), Quaternion.identity).GetComponent<Pokemon>();
                 playerPokemon.data = BattleManager.Instance.playerPokemonData;
+                playerPokemon.healthBar = healthBarPlayer;
                 Debug.Log("Player Pokemon instantiated at " + playerPokemon.transform.position);
             }
             else
@@ -35,16 +61,7 @@ public class CombatManager : MonoBehaviour
                 Debug.LogError("Player Pokemon prefab is null.");
             }
 
-            if (enemyPrefab != null)
-            {
-                enemyPokemon = Instantiate(enemyPrefab, new Vector3(0, 0, 3), Quaternion.Euler(0, 180, 0)).GetComponent<Pokemon>();
-                enemyPokemon.data = BattleManager.Instance.enemyPokemonData;
-                Debug.Log("Enemy Pokemon instantiated at " + enemyPokemon.transform.position);
-            }
-            else
-            {
-                Debug.LogError("Enemy Pokemon prefab is null.");
-            }
+            
 
         }
         else

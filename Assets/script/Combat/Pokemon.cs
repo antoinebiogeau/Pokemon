@@ -11,6 +11,7 @@ public class Pokemon : MonoBehaviour
     {
         currentHealth = data.maxHP; 
         UpdateHealthBar();
+        
     }
 
     public void TakeDamage(float damage)

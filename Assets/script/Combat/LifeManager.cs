@@ -8,7 +8,7 @@ public class LifeManager : MonoBehaviour
     public Slider healthBar;
     public Vector3 offset = new Vector3(0, 2, 0);
 
-    private Camera mainCamera;
+    public Camera mainCamera;
 
     private void Start()
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "Salam\xE8che"
   m_EditorClassIdentifier: 
   pokemonName: "Salam\xE8che"
-  pokemonPrefab: {fileID: 919132149155446097, guid: 703a64d6df54e16479985bbc1729828c,
+  pokemonPrefab: {fileID: 7945691019344971913, guid: 3e6e5c5555b1e9344952f5f211db63a5,
     type: 3}
   maxHP: 100
   attack: 10
