@@ -28,7 +28,7 @@ public class Pokemon : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.value = currentHealth / data.maxHP;
+        healthBar.value = currentHealth;
 
         if (currentHealth <= 20)
         {
