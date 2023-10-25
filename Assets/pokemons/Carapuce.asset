@@ -24,8 +24,8 @@ MonoBehaviour:
   pokemonType: {fileID: 11400000, guid: 4753573606828ab45be441d0f3b6e3aa, type: 2}
   attacks:
   - {fileID: 11400000, guid: f26d9028339312d43a33e7b5121ba782, type: 2}
-  - {fileID: 11400000, guid: 7a1614fd6929c024da3c80682fe943dc, type: 2}
-  - {fileID: 11400000, guid: 797e8f5ab66e82c41b87a0076cb6b2aa, type: 2}
-  - {fileID: 11400000, guid: e5bbc653faaa8704fa8e028dd1eb58e6, type: 2}
+  - {fileID: 11400000, guid: f26d9028339312d43a33e7b5121ba782, type: 2}
+  - {fileID: 11400000, guid: f26d9028339312d43a33e7b5121ba782, type: 2}
+  - {fileID: 11400000, guid: f26d9028339312d43a33e7b5121ba782, type: 2}
   evolution: {fileID: 0}
   variants: []
