@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: tranche herbe
   m_EditorClassIdentifier: 
   attackName: Tranche Herbe
-  attackType: 2
+  attackType: {fileID: 11400000, guid: 06dae7912b11933478a4630f09d9a6ee, type: 2}
   damage: 10

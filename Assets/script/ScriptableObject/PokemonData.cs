@@ -19,4 +19,5 @@ public class PokemonData : ScriptableObject
 
     public PokemonData evolution;
     public List<PokemonData> variants;
+    internal object attackType;
 }

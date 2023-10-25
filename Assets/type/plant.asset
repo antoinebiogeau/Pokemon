@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b35df85b747aa449c7977edd7c8605, type: 3}
   m_Name: plant
   m_EditorClassIdentifier: 
-  typeName: 
-  strongAgainst: 
-  weakAgainst: 
+  typeName: plant
+  strongAgainst: 01000000
+  weakAgainst: 00000000

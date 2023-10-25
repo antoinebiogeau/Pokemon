@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: rugissement
   m_EditorClassIdentifier: 
   attackName: Rugissement
-  attackType: 0
+  attackType: {fileID: 11400000, guid: 32a915e163043cf41ba5ef1a853d375c, type: 2}
   damage: 0

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247f3f2a82869544b9ddc953d6a0098d, type: 3}
   m_Name: bulle d'O
   m_EditorClassIdentifier: 
-  attackName: 
-  attackType: 0
+  attackName: bulle d'O
+  attackType: {fileID: 11400000, guid: 4753573606828ab45be441d0f3b6e3aa, type: 2}
   damage: 10

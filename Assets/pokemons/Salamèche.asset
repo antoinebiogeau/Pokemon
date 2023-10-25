@@ -21,7 +21,7 @@ MonoBehaviour:
   specialAttack: 10
   specialDefense: 10
   speed: 10
-  pokemonType: 0
+  pokemonType: {fileID: 11400000, guid: 32a915e163043cf41ba5ef1a853d375c, type: 2}
   attacks:
   - {fileID: 11400000, guid: cd83680642c5ded4dbe47b05e9f3fa98, type: 2}
   - {fileID: 11400000, guid: 7a1614fd6929c024da3c80682fe943dc, type: 2}
