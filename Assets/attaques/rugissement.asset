@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 247f3f2a82869544b9ddc953d6a0098d, type: 3}
   m_Name: rugissement
   m_EditorClassIdentifier: 
-  attackName: 
+  attackName: Rugissement
   attackType: 0
   damage: 0

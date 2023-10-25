@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float jumpVelocity = 7;
     private float distToGround = 0.6f;
     public float maxSpeed;
+    public bool detected;
 
 
     void Start()
@@ -29,8 +30,14 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        updateRotation();
-        moveCharacter();
+        if(!detected){
+            updateRotation();
+            moveCharacter();
+        }
+        else{
+            Debug.Log("pouf");
+        }
+        
     }
 
 

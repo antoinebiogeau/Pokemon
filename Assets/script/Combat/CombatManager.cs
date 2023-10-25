@@ -1,6 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class CombatManager : MonoBehaviour
@@ -15,6 +17,12 @@ public class CombatManager : MonoBehaviour
     public Camera mainCamera;
     public GameObject bagUI;
     public string mainSceneName = "main";
+
+    public TMP_Text NameAttaque1;
+    public TMP_Text NameAttaque2;
+    public TMP_Text NameAttaque3;
+    public TMP_Text NameAttaque4;
+
 
     public void Start()
     {
@@ -55,6 +63,11 @@ public class CombatManager : MonoBehaviour
                 playerPokemon.data = BattleManager.Instance.playerPokemonData;
                 playerPokemon.healthBar = healthBarPlayer;
                 Debug.Log("Player Pokemon instantiated at " + playerPokemon.transform.position);
+                NameAttaque1.text = playerPokemon.data.attacks[0].attackName;
+                NameAttaque2.text = playerPokemon.data.attacks[1].attackName;
+                NameAttaque3.text = playerPokemon.data.attacks[2].attackName;
+                NameAttaque4.text = playerPokemon.data.attacks[3].attackName;
+
             }
             else
             {
