@@ -14,7 +14,7 @@ public class PokemonData : ScriptableObject
     public int specialAttack;
     public int specialDefense;
     public int speed;
-    public PokemonType pokemonType;
+    public PokemonTypeData pokemonType;
     public List<AttackData> attacks;
 
     public PokemonData evolution;

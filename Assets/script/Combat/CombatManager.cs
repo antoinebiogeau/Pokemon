@@ -85,24 +85,38 @@ public class CombatManager : MonoBehaviour
 
     public void PlayerAttack(int attackIndex)
     {
+        if(playerPokemon.currentHealth <= 0){
+            Debug.LogError("Player pokemon is dead ennemy win");
+            SceneManager.LoadScene(mainSceneName);
+        }
+        else{
         AttackData chosenAttack = playerPokemon.data.attacks[attackIndex];
         float damage = chosenAttack.damage;
-        enemyPokemon.TakeDamage(damage);
+        enemyPokemon.TakeDamage(chosenAttack);
 
         Debug.Log("Le joueur a utilisé " + chosenAttack.attackName + " et a infligé " + damage + " dégâts à l'ennemi.");
         Debug.Log("Fin de tour");
         EnemyTurn();
+        }
     }
 
     public void EnemyTurn()
     {
+        if(enemyPokemon.currentHealth <= 0){
+            
+            Debug.LogError("ennemy pokemon is dead Player win");
+            SceneManager.LoadScene(mainSceneName);
+        }
+        else{
         int randomAttack = Random.Range(0, enemyPokemon.data.attacks.Count);
         AttackData chosenAttack = enemyPokemon.data.attacks[randomAttack];
         float damage = chosenAttack.damage;
-        playerPokemon.TakeDamage(damage);
+        playerPokemon.TakeDamage(chosenAttack);
 
         Debug.Log("L'ennemi a utilisé " + chosenAttack.attackName + " et a infligé " + damage + " dégâts au joueur.");
         Debug.Log("Fin du tour de l'ennemi.");
+        }
+        
     }
 
     public void ToggleBagUI()

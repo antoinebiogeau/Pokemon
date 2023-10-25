@@ -14,9 +14,15 @@ public class Pokemon : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(AttackData chosenAttack)
     {
-        currentHealth -= damage;
+        if(chosenAttack.attackType .strongAgainst == data.pokemonType.weakAgainst){
+            currentHealth -= chosenAttack.damage*2;
+        }
+        else{
+            currentHealth -= chosenAttack.damage;
+        }
+
         UpdateHealthBar();
 
         if (currentHealth <= 0)

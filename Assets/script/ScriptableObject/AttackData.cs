@@ -4,6 +4,6 @@ using UnityEngine;
 public class AttackData : ScriptableObject
 {
     public string attackName;
-    public PokemonType attackType;
+    public PokemonTypeData attackType;
     public float damage;
 }
