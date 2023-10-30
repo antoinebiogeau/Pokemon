@@ -16,7 +16,7 @@ public class Pokemon : MonoBehaviour
 
     public void TakeDamage(AttackData chosenAttack)
     {
-        if(chosenAttack.attackType.strongAgainst.Contains(data.pokemonType)){
+        if(chosenAttack.attackType.strongAgainst.ToString().Contains(data.pokemonType.typeName)){
             Debug.Log("C'est super efficace !");
             currentHealth -= chosenAttack.damage*2;
         }
