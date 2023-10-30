@@ -16,21 +16,15 @@ public class Pokemon : MonoBehaviour
 
     public void TakeDamage(AttackData chosenAttack)
     {
-        if(chosenAttack.attackType.strongAgainst.ToString().Contains(data.pokemonType.typeName)){
-            Debug.Log("C'est super efficace !");
-            currentHealth -= chosenAttack.damage*2;
-        }
-        else if(chosenAttack.attackType.weakAgainst == data.pokemonType.strongAgainst){
-            Debug.Log("Ce n'est pas très efficace...");
-            currentHealth -= chosenAttack.damage/2;
-        }
-        else if(chosenAttack.attackType.weakAgainst == data.pokemonType.weakAgainst){
-            Debug.Log("C'est ok !");
-            currentHealth -= chosenAttack.damage;
-        }
-        else if(chosenAttack.attackType.strongAgainst == data.pokemonType.strongAgainst){
-            Debug.Log("C'est ok !");
-            currentHealth -= chosenAttack.damage;
+        foreach (PokemonType type in chosenAttack.attackType.strongAgainst)
+        {
+            //si le type du pokemon est dans la liste de weakagainst
+            if (type == data.pokemonType)
+            {
+                //on divise les dégats par 2
+                currentHealth -= chosenAttack.damage / 2;
+                Debug.Log("It's not very effective...");
+            }
         }
 
         UpdateHealthBar();
